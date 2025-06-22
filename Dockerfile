@@ -17,7 +17,7 @@ COPY measurement.csv ./
 
 # Install Python dependencies
 RUN pip install --no-cache-dir \
-    flask flask-cors mediapipe opencv-python tensorflow==2.15.0 python-multipart
+    flask flask-cors mediapipe opencv-python tensorflow==2.15.0 keras==3.3.3 h5py python-multipart
 
 # Expose port
 EXPOSE 8000
