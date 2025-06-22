@@ -27,10 +27,13 @@ pose = mp_pose.Pose(static_image_mode=True, min_detection_confidence=0.5)
 face_mesh = mp_face.FaceMesh(static_image_mode=True, max_num_faces=1, min_detection_confidence=0.5)
 
 app = Flask(__name__)
-CORS(app)
+# Allow all origins, methods, and headers
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 # Helper: extract pose landmarks and complexion from image
 def extract_features(image: np.ndarray):
+    # Resize image to 256x256 to reduce memory and speed up inference
+    image = cv2.resize(image, (256, 256))
     image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     results = pose.process(image_rgb)
     if not results.pose_landmarks:

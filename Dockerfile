@@ -22,5 +22,5 @@ RUN pip install --no-cache-dir \
 # Expose port
 EXPOSE 8000
 
-# Run the app with Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"] 
+# Run the app with Gunicorn (single worker for low memory)
+CMD ["gunicorn", "-w", "1", "-b", "0.0.0.0:8000", "app:app"] 
