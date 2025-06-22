@@ -1,0 +1,17 @@
+filename,height,shoulder,chest,waist,hip,arm,leg,skin_complexion
+Hrithik.jpg,177.8,48.26,91.44,81.28,106.68,59.69,95.25,3
+Murali.jpg,170.18,43.18,86.36,66.04,96.52,54.61,90.17,2
+Kamlesh.jpg,168.15,52.07,106.68,91.44,106.68,57.15,89.0,4
+Nagesh.jpg,178.31,43.942,76.2,66.04,82.55,62.23,94.5,5
+Atharv.jpg,162.81,44.45,88.9,78.74,91.44,55.88,88.0,3
+
+{
+    "arm": 62.22,
+    "chest": 76.18,
+    "height": 178.27,
+    "hip": 82.52,
+    "leg": 94.48,
+    "shoulder": 43.93,
+    "skin_complexion": "Medium-Dark",
+    "waist": 66.02
+}
