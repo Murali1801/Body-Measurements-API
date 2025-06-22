@@ -17,10 +17,10 @@ COPY measurement.csv ./
 
 # Install Python dependencies
 RUN pip install --no-cache-dir \
-    flask flask-cors mediapipe opencv-python tensorflow==2.19.0 keras==3.10.0 h5py python-multipart
+    flask flask-cors mediapipe opencv-python tensorflow==2.19.0 keras==3.10.0 h5py python-multipart gunicorn
 
 # Expose port
 EXPOSE 8000
 
-# Run the app
-CMD ["python", "app.py"] 
+# Run the app with Gunicorn
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"] 
